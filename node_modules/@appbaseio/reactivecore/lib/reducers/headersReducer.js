@@ -1,0 +1,1 @@
+Object.defineProperty(exports,"__esModule",{value:true});exports.default=headersReducer;var _constants=require('../constants');function headersReducer(){var state=arguments.length>0&&arguments[0]!==undefined?arguments[0]:{};var action=arguments[1];if(action.type===_constants.SET_HEADERS){return action.headers;}return state;}
