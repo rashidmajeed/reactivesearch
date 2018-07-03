@@ -7,10 +7,11 @@ const Result = () => {
     <div>
       <ResultCard
         componentId="results"
-        dataField="original_title"
+        title="Results"
+        dataField={["artists","titles","publishedYear"]}
         pagination={true}
         paginationAt="bottom"
-        pages={5}
+        pages={10}
         size={12}
         Loader="Loading..."
         showResultStats={true}
@@ -19,38 +20,18 @@ const Result = () => {
         react={{
           and: [
             "mainSearch",
-            "genres-list",
-            "results"
+            "all-filter",
+            "artist-filter",
+            "title-filter",
+            "year-filter"
               ]
         }}
-        onData={(res) => {
-          return {
-            description: (
-              <div className="main-description">
-                <div className="ih-item square effect6 top_to_bottom">
-                  <a
-                    target="#"
-                    href={"http://www.imdb.com/title/" + res.imdb_id}
-                  >
-                    <div className="img">
-                      <img
-                        src={
-                          "https://image.tmdb.org/t/p/w500" +
-                          res.poster_path
-                        }
-                        alt={res.original_title}
-                        className="result-image"
-                      />
-                    </div>
-
-                  </a>
-                </div>
-              </div>
-            ),
-            url: "http://www.imdb.com/title/" + res.imdb_id
-          };
-        }}
-      />
+        onData={(res)=>({
+          "title": res.titles  
+        })}
+    
+  />
+      
     </div>
   );
 };

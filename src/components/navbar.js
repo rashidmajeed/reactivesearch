@@ -5,7 +5,7 @@ class Navbar extends Component {
   render() {
     return (
       <div className="app-logo">
-        MovieFinder
+      <img src="../../ama4.png" alt=""/>
       </div>
     )
   }

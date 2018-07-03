@@ -6,11 +6,14 @@ const SearchData = () => (
   <div className="search-container">
     <DataSearch
       componentId="mainSearch"
-      dataField={["original_title"]}
-      categoryField="title"
-      className="search-bar"
+      dataField={["artists","artists.search","titles","titles.search","publishedYear","publishedYear.search"]}
+      className="datasearch"
+      innerClass={{
+        "input": "searchbox",
+        "list": "suggestionlist"
+      }}
       queryFormat="and"
-      placeholder="Browse your favourite movies.."
+      placeholder="Search.."
       iconPosition="left"
       autosuggest={false}
       filterLabel="search"
